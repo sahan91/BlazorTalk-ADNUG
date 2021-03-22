@@ -1,1 +1,1 @@
-# Blazor Counter Example
+# Blazor WASM & Server - Counter Example
