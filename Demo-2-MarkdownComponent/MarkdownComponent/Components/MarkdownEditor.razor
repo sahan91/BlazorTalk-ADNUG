@@ -1,0 +1,23 @@
+﻿@using Markdig
+<div class="row">
+    <div class="col-6">
+        <h3>Markdown</h3>
+
+        <textarea class="form-control h-100" @bind-value="Body" @bind-value:event="oninput"></textarea>
+    </div>
+
+    <div class="col-6">
+        <h3>Preview</h3>
+
+        <p class="p-2 border rounded bg-light h-100">
+            @((MarkupString) Preview)
+        </p>
+    </div>
+</div>
+
+@code {
+
+    public string Body { get; set; } = "";
+    public string Preview => Markdown.ToHtml(Body);
+
+}
