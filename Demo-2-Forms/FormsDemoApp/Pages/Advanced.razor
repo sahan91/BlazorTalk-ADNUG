@@ -1,7 +1,48 @@
 ﻿@page "/advanced"
+@using PeterLeslieMorris.Blazor.Validation.Extensions
 
 <h2>Advanced Form</h2>
 
+<p>
+    This form demonstrates ...
+</p>
+
+<div class="my-5">
+    <EditForm Model="UserDetails" OnSubmit="@FormSubmitted">
+      <PeterLeslieMorris.Blazor.Validation.Validate/>
+
+      <div class="col-md-4">
+          <label for="@nameof(UserDetails.Name)" class="form-label">Name</label>
+          <InputText Class="form-control" @bind-Value="UserDetails.Name" />
+          <ValidationMessage For="@(() => UserDetails.Name)" />
+      </div>
+      
+      <div class="col-md-4">
+          <label for="@nameof(UserDetails.Email)" class="form-label">Email</label>
+          <InputText Class="form-control" @bind-Value="UserDetails.Email" />
+          <ValidationMessage For="@(() => UserDetails.Email)" />
+      </div>
+      
+
+      <div class="col-md-4">
+          <label for="@nameof(UserDetails.ConfirmEmail)" class="form-label">Confirm Email</label>
+          <InputText Class="form-control" @bind-Value="UserDetails.ConfirmEmail" />
+          <ValidationMessage For="@(() => UserDetails.ConfirmEmail)" />
+      </div>
+      
+      <button class="btn btn-primary mt-3" type="submit">Submit</button>
+    </EditForm>
+</div>
+
 @code {
+    private UserSignUpDetails UserDetails { get; set; } = new();
+    
+    public void FormSubmitted(EditContext editContext)
+    {
+        if(editContext.ValidateObjectTree())
+        {
+             UserDetails = new();
+        }
+    }
 
 }
