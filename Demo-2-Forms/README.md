@@ -29,4 +29,12 @@ All validation is defined using the attributes and the `EditForm` uses the conve
 
 ## /Advanced
 
-In the advanced demo, we utilize the [PeterLeslieMorris.Blazor.FluentValidation](https://www.nuget.org/packages/PeterLeslieMorris.Blazor.FluentValidation/) package to wire-up validation logic using [FluentValidation](https://fluentvalidation.net/) rules.
+In the advanced demo, we utilize the [PeterLeslieMorris.Blazor.FluentValidation](https://github.com/mrpmorris/blazor-validation) package to wire-up validation logic using [FluentValidation](https://fluentvalidation.net/) rules.
+
+In this example, we utilize the data annotations for simple validation but layer-in some advanced business logic using FluentValidation.
+
+The beauty of this example is that you can leverage the same rich business rules in the client and on the backend without having to duplicate code or logic.
+
+## Further Reading
+
+- [Creating custom validator components](https://docs.microsoft.com/en-us/aspnet/core/blazor/forms-validation?view=aspnetcore-5.0#validator-components)

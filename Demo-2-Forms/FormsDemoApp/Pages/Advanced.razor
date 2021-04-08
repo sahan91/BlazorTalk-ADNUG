@@ -4,11 +4,12 @@
 <h2>Advanced Form</h2>
 
 <p>
-    This form demonstrates ...
+    This form demonstrates the use of the <code>PeterLeslieMorris.Blazor.Validation.Validate</code>
+    component which integrates FluentValidation rules into Blazor validation.
 </p>
 
 <div class="my-5">
-    <EditForm Model="UserDetails" OnSubmit="@FormSubmitted">
+    <EditForm Model="UserDetails" OnValidSubmit="@FormSubmitted">
       <PeterLeslieMorris.Blazor.Validation.Validate/>
 
       <div class="col-md-4">
@@ -39,10 +40,7 @@
     
     public void FormSubmitted(EditContext editContext)
     {
-        if(editContext.ValidateObjectTree())
-        {
-             UserDetails = new();
-        }
+        UserDetails = new();
     }
 
 }

@@ -30,16 +30,14 @@ namespace FormsDemoApp.Models
 			RuleFor(x => x.Name)
 				.Cascade(CascadeMode.StopOnFirstFailure)
 				.NotEmpty()
-				.MustAsync(NotBePalindrome).WithMessage("Your name cannot be a palindrome");
+				.Must(NotBePalindrome).WithMessage("Your name cannot be a palindrome");
+                
 			RuleFor(x => x.Email).NotEmpty().EmailAddress();
 		}
 
-		private async Task<bool> NotBePalindrome(string word, CancellationToken cancellationToken)
+		private bool NotBePalindrome(string word)
 		{
-			await Task.Delay(1000, cancellationToken);
-
-            var reversedWord = new string(word.Reverse().ToArray());
-
+			var reversedWord = new string(word.Reverse().ToArray());
             var areSame = word.Equals(reversedWord);
 
             return !areSame;
