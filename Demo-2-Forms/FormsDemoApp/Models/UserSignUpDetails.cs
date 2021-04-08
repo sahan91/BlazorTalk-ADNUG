@@ -23,25 +23,25 @@ namespace FormsDemoApp.Models
     }
 
 
-	public class UserSignUpDetailsValidator : AbstractValidator<UserSignUpDetails>
-	{
-		public UserSignUpDetailsValidator()
-		{
-			RuleFor(x => x.Name)
-				.Cascade(CascadeMode.StopOnFirstFailure)
-				.NotEmpty()
-				.Must(NotBePalindrome).WithMessage("Your name cannot be a palindrome");
+    public class UserSignUpDetailsValidator : AbstractValidator<UserSignUpDetails>
+    {
+        public UserSignUpDetailsValidator()
+        {
+            RuleFor(x => x.Name)
+                .Cascade(CascadeMode.StopOnFirstFailure)
+                .NotEmpty()
+                .Must(NotBePalindrome).WithMessage("Your name cannot be a palindrome");
                 
-			RuleFor(x => x.Email).NotEmpty().EmailAddress();
-		}
+            RuleFor(x => x.Email).NotEmpty().EmailAddress();
+        }
 
-		private bool NotBePalindrome(string word)
-		{
-			var reversedWord = new string(word.Reverse().ToArray());
+        private bool NotBePalindrome(string word)
+        {
+            var reversedWord = new string(word.Reverse().ToArray());
             var areSame = word.Equals(reversedWord);
 
             return !areSame;
-		}
+        }
         
     }
 }

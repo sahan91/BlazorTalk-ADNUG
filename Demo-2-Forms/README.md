@@ -31,7 +31,33 @@ All validation is defined using the attributes and the `EditForm` uses the conve
 
 In the advanced demo, we utilize the [PeterLeslieMorris.Blazor.FluentValidation](https://github.com/mrpmorris/blazor-validation) package to wire-up validation logic using [FluentValidation](https://fluentvalidation.net/) rules.
 
+Note: there is [another Blazor.FluentValidation component that is worth checking out](https://github.com/ryanelian/FluentValidation.Blazor).
+
 In this example, we utilize the data annotations for simple validation but layer-in some advanced business logic using FluentValidation.
+
+```csharp
+public class UserSignUpDetailsValidator : AbstractValidator<UserSignUpDetails>
+{
+    public UserSignUpDetailsValidator()
+    {
+        RuleFor(x => x.Name)
+            .Cascade(CascadeMode.StopOnFirstFailure)
+            .NotEmpty()
+            .Must(NotBePalindrome).WithMessage("Your name cannot be a palindrome");
+
+        RuleFor(x => x.Email).NotEmpty().EmailAddress();
+    }
+
+    private bool NotBePalindrome(string word)
+    {
+        var reversedWord = new string(word.Reverse().ToArray());
+        var areSame = word.Equals(reversedWord);
+
+        return !areSame;
+    }
+
+}
+```
 
 The beauty of this example is that you can leverage the same rich business rules in the client and on the backend without having to duplicate code or logic.
 
