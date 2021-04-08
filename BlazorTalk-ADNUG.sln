@@ -11,9 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo-3-ThirdPartyComponents
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThirdPartyComponents", "Demo-3-ThirdPartyComponents\ThirdPartyComponents\ThirdPartyComponents.csproj", "{6A4F47B1-F0BB-4189-9475-6364539F0085}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo-5-jsInterop", "Demo-5-jsInterop", "{7830D60F-C749-4844-A0F6-F75693EEBDB2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo-4-jsInterop", "Demo-5-jsInterop", "{7830D60F-C749-4844-A0F6-F75693EEBDB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsInterop", "Demo-5-jsInterop\JsInterop\JsInterop.csproj", "{80AE379A-C4B9-451F-8AF7-8D4151F8DFA9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsInterop", "Demo-4-jsInterop\JsInterop\JsInterop.csproj", "{80AE379A-C4B9-451F-8AF7-8D4151F8DFA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
