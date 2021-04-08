@@ -1,0 +1,52 @@
+﻿@using Blazored.Typeahead
+
+<h3>Autocomplete Demo</h3>
+
+<BlazoredTypeahead SearchMethod="SearchCars"
+                   @bind-Value="_selectedCar">
+    <SelectedTemplate>
+        @context.Title
+    </SelectedTemplate>
+    <ResultTemplate>
+        @context.Title (@context.Year)
+    </ResultTemplate>
+</BlazoredTypeahead>
+
+@if (_selectedCar != null)
+{
+    <p class="mu-2">Selected Car is: @_selectedCar.Title</p>
+}
+
+@code {
+
+    private List<Car> _cars;
+    private Car _selectedCar;
+
+    protected override void OnInitialized()
+    {
+        _cars = new List<Car> {
+            new("BMW X5", 2021),
+            new("Merc C63", 2020),
+            new("Ferrari F50", 1997),
+            new("Ferrari 360 Spider", 2004),
+            new("Ferrari 458", 2015) };
+    }
+
+    private async Task<IEnumerable<Car>> SearchCars(string searchText)
+    {
+        return await Task.FromResult(_cars.Where(x => x.Title.ToLower().Contains(searchText.ToLower())).ToList());
+    }
+
+    class Car
+    {
+        public string Title { get; set; }
+        public int Year { get; set; }
+
+        public Car(string title, int year)
+        {
+            Title = title;
+            Year = year;
+        }
+    }
+
+}

@@ -7,9 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo-2-Forms", "Demo-2-Form
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormsDemoApp", "Demo-2-Forms\FormsDemoApp\FormsDemoApp.csproj", "{7ED676AE-3287-4B17-AC8E-22AA1C2D4A6F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo-3-MarkdownComponent", "Demo-3-MarkdownComponent", "{91D17675-5547-41F7-A237-2FB75875DAD2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo-3-ThirdPartyComponents", "Demo-3-ThirdPartyComponents", "{91D17675-5547-41F7-A237-2FB75875DAD2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarkdownComponent", "Demo-3-MarkdownComponent\MarkdownComponent\MarkdownComponent.csproj", "{6A4F47B1-F0BB-4189-9475-6364539F0085}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThirdPartyComponents", "Demo-3-ThirdPartyComponents\ThirdPartyComponents\ThirdPartyComponents.csproj", "{6A4F47B1-F0BB-4189-9475-6364539F0085}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo-5-jsInterop", "Demo-5-jsInterop", "{7830D60F-C749-4844-A0F6-F75693EEBDB2}"
 EndProject

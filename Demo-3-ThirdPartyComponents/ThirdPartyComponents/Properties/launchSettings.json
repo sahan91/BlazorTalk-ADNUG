@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "MarkdownComponent": {
+    "ThirdPartyComponents": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
