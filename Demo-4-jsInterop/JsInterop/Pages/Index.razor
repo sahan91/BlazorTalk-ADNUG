@@ -2,5 +2,15 @@
 
 <h1>JsInterop Demo</h1>
 
-<p>This demo ...</p>
+<p>The button has been clicked @Counter times.</p>
+<button @onclick="HandleClick">Click me</button>
 
+@code {
+
+    private int Counter = 0;
+
+    private void HandleClick()
+    {
+        Counter++;
+    }
+}
