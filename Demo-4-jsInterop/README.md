@@ -20,4 +20,20 @@ To confirm that hot reload is working, make a change to the scoped style in Inde
 
 ## /js-demo
 
-The basic example shows a minimal example of loading an ES6 module using Blazor code running on the server.
+The demo example loads an ES6 module using Blazor code running on the server.
+
+```csharp
+selfReference = DotNetObjectReference.Create(this);
+module = await JS.InvokeAsync<IJSObjectReference>(
+    "import", "/js/demo.js");
+
+await module.InvokeVoidAsync("enableSimple", "button", "click", selfReference);
+```
+
+When the module is loaded, a reference to the component is passed to the client.
+
+The client uses the component reference to invoke a call to a `JsInvokable` callback method on the server
+
+```js
+componentInstance.invokeMethodAsync("HandleClick", num, reason);
+```
