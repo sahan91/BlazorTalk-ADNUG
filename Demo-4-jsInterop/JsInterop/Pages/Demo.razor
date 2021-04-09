@@ -25,7 +25,7 @@
             module = await JS.InvokeAsync<IJSObjectReference>(
                 "import", "/js/demo.js");
             
-            await module.InvokeVoidAsync("enableSimple", "button", "click", selfReference);
+            await module.InvokeVoidAsync("enableButtonsDemo", "button", "click", selfReference);
         }
     }
 

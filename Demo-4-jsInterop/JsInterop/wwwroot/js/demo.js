@@ -1,5 +1,5 @@
 ﻿
-export function enableSimple(sel, evt, componentInstance) {
+export function enableButtonsDemo(sel, evt, componentInstance) {
 
     let els = document.querySelectorAll(sel);
 
