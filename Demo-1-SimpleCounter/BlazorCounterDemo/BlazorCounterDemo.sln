@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorCounterDemo.Server", "Server\BlazorCounterDemo.Server.csproj", "{C36D8D08-DD0B-43D7-B2FE-3346C0E55AD7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorCounterDemo.WASM", "BlazorCounterDemo.WASM\BlazorCounterDemo.WASM.csproj", "{46919E8B-5E50-49E0-9976-E112A9F4DF8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorCounterDemo.Client", "Client\BlazorCounterDemo.Client.csproj", "{0A821E13-493A-444F-82B6-C3AE04FED405}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorCounterDemo.Shared", "Shared\BlazorCounterDemo.Shared.csproj", "{CB45B439-0957-432C-84BC-BE71A3C849E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorCounterDemo.Server", "BlazorCounterDemo.Server\BlazorCounterDemo.Server.csproj", "{1054737C-F507-4632-96C1-EA21E851DE8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C36D8D08-DD0B-43D7-B2FE-3346C0E55AD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C36D8D08-DD0B-43D7-B2FE-3346C0E55AD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C36D8D08-DD0B-43D7-B2FE-3346C0E55AD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C36D8D08-DD0B-43D7-B2FE-3346C0E55AD7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0A821E13-493A-444F-82B6-C3AE04FED405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A821E13-493A-444F-82B6-C3AE04FED405}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A821E13-493A-444F-82B6-C3AE04FED405}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0A821E13-493A-444F-82B6-C3AE04FED405}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CB45B439-0957-432C-84BC-BE71A3C849E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CB45B439-0957-432C-84BC-BE71A3C849E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CB45B439-0957-432C-84BC-BE71A3C849E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CB45B439-0957-432C-84BC-BE71A3C849E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46919E8B-5E50-49E0-9976-E112A9F4DF8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46919E8B-5E50-49E0-9976-E112A9F4DF8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46919E8B-5E50-49E0-9976-E112A9F4DF8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46919E8B-5E50-49E0-9976-E112A9F4DF8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1054737C-F507-4632-96C1-EA21E851DE8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1054737C-F507-4632-96C1-EA21E851DE8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1054737C-F507-4632-96C1-EA21E851DE8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1054737C-F507-4632-96C1-EA21E851DE8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
