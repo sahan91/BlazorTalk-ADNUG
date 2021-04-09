@@ -1,0 +1,50 @@
+﻿@page "/demo"
+@inject IJSRuntime JS
+@implements IAsyncDisposable
+
+<h3>JS Demo</h3>
+
+<p>@UserMessage</p>
+
+@for(var i=0; i<10; i++)
+{
+    <button id="@i">Button @i</button>
+}
+
+@code {
+
+    private IJSObjectReference module;
+    private DotNetObjectReference<Demo> selfReference;
+    string UserMessage = "";
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            selfReference = DotNetObjectReference.Create(this);
+            module = await JS.InvokeAsync<IJSObjectReference>(
+                "import", "/js/demo.js");
+            
+            await module.InvokeVoidAsync("enableSimple", "button", "click", selfReference);
+        }
+    }
+
+    [JSInvokable]
+    public void HandleClick(int buttonId, string reason)
+    {
+        UserMessage = $"You clicked button {buttonId} because: {reason}.";
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (selfReference != null)
+        {
+            selfReference.Dispose();
+        }
+
+        if (module != null)
+        {
+            await module.DisposeAsync();
+        }
+    }
+}
