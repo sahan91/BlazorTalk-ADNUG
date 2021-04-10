@@ -26,9 +26,8 @@ namespace FormsDemoApp.Models
     public class FluentFormModel
     {
         public string Name { get; set; }
-
+        public string Country { get; set; }
         public string Email { get; set; }
-
         public string ConfirmEmail { get; set; }
         public string Password { get; set; }
     }
@@ -42,6 +41,10 @@ namespace FormsDemoApp.Models
             RuleFor(x => x.Name)
                 .NotEmpty()
                 .MaximumLength(30);
+
+            RuleFor(x => x.Country)
+                .NotEmpty()
+                .WithMessage("You must select a country");
                 
             RuleFor(x => x.Email)
                 .NotEmpty()

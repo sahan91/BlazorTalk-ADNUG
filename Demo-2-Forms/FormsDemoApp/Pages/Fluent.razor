@@ -18,6 +18,18 @@
           <InputText Class="form-control" @bind-Value="UserDetails.Name" />
           <ValidationMessage For="@(() => UserDetails.Name)" />
       </div>
+
+      <div class="col-md-4 mb-3">
+          <label for="@nameof(UserDetails.Country)" class="form-label">Country</label>
+          <InputSelect @bind-Value="UserDetails.Country" class="form-control">
+              <option value="">Select country ...</option>
+              @foreach(var country in Countries)
+              {
+                  <option value="@country">@country</option>
+              }
+            </InputSelect>
+          <ValidationMessage For="@(() => UserDetails.Country)" />
+      </div>
       
       <div class="col-md-4 mb-3">
           <label for="@nameof(UserDetails.Email)" class="form-label">Email</label>
@@ -47,6 +59,13 @@
 
 @code {
     private FluentFormModel UserDetails { get; set; } = new();
+    private List<string> Countries = new List<string>
+    {
+        "Australia",
+        "Belgium",
+        "United Kingdon",
+        "United States"
+    };
     
     public void FormSubmitted(EditContext editContext)
     {
