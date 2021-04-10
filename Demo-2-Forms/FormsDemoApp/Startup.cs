@@ -21,7 +21,7 @@ namespace FormsDemoApp
             services.AddFormValidation(config =>
               config
                 .AddDataAnnotationsValidation()
-                .AddFluentValidation(typeof(UserSignUpDetails).Assembly)
+                .AddFluentValidation(typeof(AnnotationsFormModel).Assembly)
             );
 
             services.AddRazorPages();

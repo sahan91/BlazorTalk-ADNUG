@@ -1,32 +1,32 @@
 ﻿@page "/"
 
-<h2>Basic Form</h2>
+<h2>Data Annotations Form</h2>
 
-<p>
+<p class="lead">
     This form demonstrates the use of Blazor's EditForm and EditContext along with 
-    validation powered by DataAnnotations.
+    validation powered by data annotations.
 </p>
 
 <div class="my-5">
     <EditForm Model="UserDetails" OnValidSubmit="@FormSubmitted">
       <DataAnnotationsValidator />
 
-      <div class="col-md-4">
+      <div class="col-md-4 mb-3">
           <label for="@nameof(UserDetails.Name)" class="form-label">Name</label>
           <InputText Class="form-control" @bind-Value="UserDetails.Name" />
           <ValidationMessage For="@(() => UserDetails.Name)" />
       </div>
       
-      <div class="col-md-4">
+      <div class="col-md-4 mb-3">
           <label for="@nameof(UserDetails.Email)" class="form-label">Email</label>
-          <InputText Class="form-control" @bind-Value="UserDetails.Email" />
+          <InputText Class="form-control" @bind-Value="UserDetails.Email" placeholder="name@example.com" />
           <ValidationMessage For="@(() => UserDetails.Email)" />
       </div>
       
 
-      <div class="col-md-4">
+      <div class="col-md-4 mb-3">
           <label for="@nameof(UserDetails.ConfirmEmail)" class="form-label">Confirm Email</label>
-          <InputText Class="form-control" @bind-Value="UserDetails.ConfirmEmail" />
+          <InputText Class="form-control" @bind-Value="UserDetails.ConfirmEmail" placeholder="name@example.com" />
           <ValidationMessage For="@(() => UserDetails.ConfirmEmail)" />
       </div>
       
@@ -35,7 +35,7 @@
 </div>
 
 @code {
-    private UserSignUpDetails UserDetails { get; set; } = new();
+    private AnnotationsFormModel UserDetails { get; set; } = new();
     
     public void FormSubmitted()
     {

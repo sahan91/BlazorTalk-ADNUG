@@ -1,0 +1,58 @@
+﻿@page "/fluent"
+@using PeterLeslieMorris.Blazor.Validation.Extensions
+
+<h2>Custom Validation</h2>
+
+<p class="lead">
+    This form uses the <a href="https://github.com/mrpmorris/blazor-validation" target="_blank">PeterLeslieMorris.Blazor.Validation.Validate
+    component</a> which integrates <a href="https://docs.fluentvalidation.net/en/latest/built-in-validators.html" target="_blank">FluentValidation rules</a>
+    into Blazor's form validation.
+</p>
+
+<div class="my-5">
+    <EditForm Model="UserDetails" OnValidSubmit="@FormSubmitted">
+      <PeterLeslieMorris.Blazor.Validation.Validate/>
+
+      <div class="col-md-4 mb-3">
+          <label for="@nameof(UserDetails.Name)" class="form-label">Name</label>
+          <InputText Class="form-control" @bind-Value="UserDetails.Name" />
+          <ValidationMessage For="@(() => UserDetails.Name)" />
+      </div>
+      
+      <div class="col-md-4 mb-3">
+          <label for="@nameof(UserDetails.Email)" class="form-label">Email</label>
+          <InputText Class="form-control" @bind-Value="UserDetails.Email" placeholder="name@example.com" />
+          <ValidationMessage For="@(() => UserDetails.Email)" />
+      </div>
+      
+
+      <div class="col-md-4 mb-3">
+          <label for="@nameof(UserDetails.ConfirmEmail)" class="form-label">Confirm Email</label>
+          <InputText Class="form-control" @bind-Value="UserDetails.ConfirmEmail" placeholder="name@example.com" />
+          <ValidationMessage For="@(() => UserDetails.ConfirmEmail)" />
+      </div>
+
+      <div class="col-md-4 mb-3">
+          <label for="@nameof(UserDetails.Password)" class="form-label">Password</label>
+          <InputText Class="form-control" @bind-Value="UserDetails.Password" type="password" aria-describedby="passwordHelpBlock" />
+          <div id="passwordHelpBlock" class="form-text">
+            Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces.
+          </div>
+          <ValidationMessage For="@(() => UserDetails.Password)" />
+      </div>
+      
+      <button class="btn btn-primary mt-3" type="submit">Submit</button>
+    </EditForm>
+</div>
+
+@code {
+    private FluentFormModel UserDetails { get; set; } = new();
+    
+    public void FormSubmitted(EditContext editContext)
+    {
+        var result = editContext.Validate();
+        if(result)  
+            UserDetails = new();
+    }
+
+}
