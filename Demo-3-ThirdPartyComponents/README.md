@@ -1,4 +1,4 @@
-# Markdown Editor Demo
+# Third Party Component Support
 
 This is a Blazor WASM application to showcase the third-party plugin support in Blazor. There are 2 components in this project.
 
