@@ -2,7 +2,7 @@
 
 This repo contains the demos and the slides we presented at the Adelaide .NET User Group at the [14 April 2021 event](https://www.meetup.com/en-AU/Adelaide-dotNET/events/276984046/).
 
-The multiplayer card game showed by Darren is hosted in this link.
+The multiplayer card game showed by Darren is hosted under this [link](https://github.com/dneimke/BlazorGame).
 
 Slide deck
 [Blazor ADNUG](/Slides/blazor-adnug.pdf)
